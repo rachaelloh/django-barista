@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Our Products</h1>
+    <ul>
+        {% for product in catalog %}
+        <li>
+            Category: {{ product.Category.name }} |
+            
+            {{product.name}} x {{product.stock}}
+            
+            {%if product.image %}
+                <img src="{{product.image.cdn_url}}"/>
+            {%endif%}
+            <a href="{% url 'update_course' course_id=c.id %}">Edit</a>
+            <a href="{% url 'add_to_cart' course_id=c.id %}">Add to Cart</a>
+        </li> 
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
