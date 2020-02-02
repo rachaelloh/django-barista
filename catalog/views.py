@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
 from .forms import ProductForm
 from django.contrib import messages
@@ -30,3 +30,23 @@ def create_product(request):
         'form': product_form
     })
     
+# Update/Edit Product
+
+def update_product(request, product_id):
+    product_updated = get_object_or_404(Product, pk=product_id)
+    
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product_updated)
+        if form.is_valid():
+            form.save()
+            
+            return redirect(show_products)
+            
+        else:
+            update_form = ProductForm(instance=product_updated)
+            
+        return render(request, 'catalog/update_product.template.html', {
+            'form': update_form
+        })
+            
+            
