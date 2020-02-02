@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product
 from .forms import ProductForm
 from django.contrib import messages
@@ -49,4 +49,18 @@ def update_product(request, product_id):
             'form': update_form
         })
             
-            
+
+# Confirm Product to be deleted
+
+def confirm_delete_product(request, product_id):
+    delete_product = get_object_or_404(Product, pk=product_id)
+    return render(request, 'catalog/confirm_delete_product.template.html', {
+        'product':delete_product
+    })
+    
+# Actually deleting Product
+
+def actually_delete_product(request, product_id):
+    product_being_deleted = get_object_or_404(Product, pk=product_id)
+    product_being_deleted.delete()
+    return redirect(reverse('show_products'))
