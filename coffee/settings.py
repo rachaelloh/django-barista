@@ -141,3 +141,6 @@ AUTH_USER_MODEL = 'accounts.MyUser'
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     )
+    
+# to enable messages
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
