@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'catalog',
     'crispy_forms',
     'pyuploadcare.dj',
-    
+    'accounts',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -136,4 +136,8 @@ UPLOADCARE = {
     'secret': UPLOADCARE_SECRET_KEY,
 }
 
-LOGIN_REDIRECT_URL = '/catalog'
+AUTH_USER_MODEL = 'accounts.MyUser'
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    )
