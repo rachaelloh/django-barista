@@ -144,3 +144,6 @@ AUTHENTICATION_BACKENDS = (
     
 # to enable messages
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+# default login URL
+LOGIN_URL = 'login'
