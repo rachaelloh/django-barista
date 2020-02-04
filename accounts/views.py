@@ -34,6 +34,7 @@ def login(request):
             'form': login_form
         })
         
+# to protect page
 @login_required
 def profile(request):
     return HttpResponse("Profile")
