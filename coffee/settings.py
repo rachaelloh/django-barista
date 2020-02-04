@@ -135,3 +135,5 @@ UPLOADCARE = {
     'pub_key': UPLOADCARE_PUBLIC_KEY,
     'secret': UPLOADCARE_SECRET_KEY,
 }
+
+LOGIN_REDIRECT_URL = '/catalog'
