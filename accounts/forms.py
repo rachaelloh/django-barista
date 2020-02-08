@@ -13,7 +13,7 @@ class UserLoginForm(forms.Form):
     
 class UserRegistrationForm(UserCreationForm):
      # """Form to register user"""
-    password1 = forms.CharField(widget=forms.PasswordInput)
+    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
     password2 = forms.CharField(label="Password Confirmation", widget=forms.PasswordInput)
          
     class Meta:
@@ -21,24 +21,22 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['email', 'username', 'password1', 'password2']
         
 
-def clean_email(self):
-    User = get_user_model()
-    email = self.cleaned_data.get('email') #1
-    username = self.cleaned_data.get('username')
-    #2 check if the email is unique, using the Django ORM
-    if User.objects.filter(email=email):
-        raise forms.ValidationError(u'Email address must be unique')
-    return email
+    def clean_email(self):
+        User = get_user_model()
+        email = self.cleaned_data.get('email') #1
+        username = self.cleaned_data.get('username')
+        #2 check if the email is unique, using the Django ORM
+        if User.objects.filter(email=email).exclude(username=username):
+            raise forms.ValidationError(u'Email address must be unique')
+        return email
     
     
-def clean_password2(self):
-    password1 = self.cleaned_data.get('password1')
-    password2 = self.cleaned_data.get('password2')
-
-    if not password1 or not password2:
-        raise ValidationError("Please confirm your password")
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
         
-    if password1 != password2:
-        raise ValidationError("Passwords must match")
+        if password1 != password2:
+            raise forms.ValidationError("Passwords must match")
+            
+        return password2
         
-    return password2
