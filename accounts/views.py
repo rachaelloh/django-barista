@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
-from .forms import UserLoginForm
+from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.template.html')
+    return render(request, 'accounts/index.template.html')
     
 def logout(request):
     auth.logout(request)
@@ -24,13 +24,13 @@ def login(request):
                 return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Invalid username or password")
-                return render(request, 'login.template.html', {
+                return render(request, 'accounts/login.template.html', {
                     'form': login_form
                 })
     
     else:
         login_form = UserLoginForm()
-        return render(request, 'login.template.html', {
+        return render(request, 'accounts/login.template.html', {
             'form': login_form
         })
         
@@ -38,3 +38,10 @@ def login(request):
 @login_required
 def profile(request):
     return HttpResponse("Profile")
+    
+# for user registration
+def register(request):
+    form = UserRegistrationForm()
+    return render(request, 'accounts/register.template.html', {
+        'form': form
+    })
