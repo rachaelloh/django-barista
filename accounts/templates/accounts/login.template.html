@@ -13,7 +13,7 @@ Login to your account
 {% block content %}
 {{ form.media }}
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}
     <input type="submit" name="Login"/>

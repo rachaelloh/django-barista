@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from .models import MyUser
 
 # Create your views here.
 def index(request):
@@ -69,8 +70,9 @@ def register(request):
 # to protect page
 @login_required
 def profile(request):
-    User = get_user_model()
+    User = MyUser
     user = User.objects.get(email=request.user.email)
     return render(request, 'accounts/profile.template.html', {
         'user' : user
     })
+

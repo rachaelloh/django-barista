@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'pyuploadcare.dj',
     'accounts',
+    'shopping_cart',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

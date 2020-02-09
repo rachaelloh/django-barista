@@ -10,7 +10,7 @@ from django.contrib import messages
 def show_products(request):
     all_products = Product.objects.all()
     return render(request, 'catalog/products.template.html', {
-        'all_products':all_products
+        'all_products': all_products
     })
 
 
@@ -20,7 +20,7 @@ def create_product(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Product has been created!")
+            messages.success(request,"Product [" + form.data.get('name') + "] has been added!") 
             return redirect(show_products)
       
     else:
