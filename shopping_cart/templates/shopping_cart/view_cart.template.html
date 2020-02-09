@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My Cart</h1>
+<ul>
+    {%for id,product in shopping_cart.items %}
+        <li>
+            {{product.name}}<br/>
+            ${{product.price}}
+            <a href="{% url 'remove_from_cart' course_id=course.id %}"> Remove from Cart</a>
+        </li>
+    {%endfor%}
+
+</ul>
+{% endblock %}

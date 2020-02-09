@@ -34,6 +34,29 @@ def add_to_cart(request, product_id):
         cart[product_id]['quantity']+=1
         request.session['shopping_cart'] = cart
         total_price = round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
-        return render(request, 'cart/view_cart.template.html', {
+        return render(request, 'shopping_cart/view_cart.template.html', {
             'total_price':total_price
         })
+        
+def view_cart(request):
+    # retrieve the cart
+    cart = request.session.get('shopping_cart', {})
+    
+    return render(request, 'shopping_cart/view_cart.template.html', {
+        'shopping_cart':cart
+    })
+    
+    
+def remove_from_cart(request, product_id):
+    # retrieve the cart from session
+    cart = request.session.get('shopping_cart',{})
+    
+    # if the product is in the cart
+    if product_id in cart:
+        # remove it from the cart
+        del cart[product_id]
+        # save back to the session
+        request.session['shopping_cart'] = cart
+        messages.success(request, "Item removed from cart successfully!")
+        
+    return redirect(view_cart)
