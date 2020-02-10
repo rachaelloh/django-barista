@@ -6,4 +6,4 @@ class ProductForm(forms.ModelForm):
     image = ImageField(widget=FileWidget(attrs={'data-clearable':True}))
     class Meta:
         model=Product
-        fields=('name', 'price', 'stock', 'Category', 'image')
+        fields=('name', 'description', 'price', 'Category', 'image')

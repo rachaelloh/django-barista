@@ -4,8 +4,8 @@ from pyuploadcare.dj.models import ImageField
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(blank=False, max_length=200)
+    description = models.TextField(blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2, blank=False)
-    stock = models.IntegerField(blank=False)
     Category = models.ForeignKey("Category", blank=True, null=True, on_delete=models.SET_NULL)
     
     image = ImageField(blank=True)

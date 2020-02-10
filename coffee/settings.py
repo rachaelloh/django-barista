@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'pyuploadcare.dj',
     'accounts',
     'shopping_cart',
+    'checkout',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
