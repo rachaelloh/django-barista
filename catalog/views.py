@@ -40,14 +40,14 @@ def update_product(request, product_id):
         if form.is_valid():
             form.save()
             
-            return redirect(show_products)
+            return redirect(reverse(show_products))
             
-        else:
-            update_form = ProductForm(instance=product_updated)
+    else:
+        update_form = ProductForm(instance=product_updated)
             
-        return render(request, 'catalog/update_product.template.html', {
-            'form': update_form
-        })
+    return render(request, 'catalog/update_product.template.html', {
+        'form': update_form
+    })
             
 
 # Confirm Product to be deleted
