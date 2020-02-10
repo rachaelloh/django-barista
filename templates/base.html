@@ -26,15 +26,15 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a class="nav-link" href="/catalog"> Products</a></li>
         {% if user.is_authenticated %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="material-icons left">view_list</i>My Profile</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="material-icons left">home</i>Logout</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-list"></i> Cart
+        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i>My Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out left"></i>Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i> Cart
                 {% if product_count > 0 %}
                 <label class="badge badge-warning">{{ product_count }}</label>
                 {% endif %}
         {% else %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"> Register</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"> Log In</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"> <i class="fa fa-user-plus"></i>Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"> <i class="fa fa-sign-in"></i>Log In</a></li>
         {% endif %}
             </a>
         </li>
