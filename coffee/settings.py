@@ -151,3 +151,7 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 # default login URL
 LOGIN_URL = 'login'
+
+# stripe payment
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
