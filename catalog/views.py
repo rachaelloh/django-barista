@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product
-from .forms import ProductForm
+from .forms import ProductForm, ProductSearchForm
 from django.contrib import messages
 
 
@@ -8,9 +8,14 @@ from django.contrib import messages
 
 # Show Products
 def show_products(request):
+    form = ProductSearchForm()
     all_products = Product.objects.all()
+    if request.GET.get('search_terms'):
+        all_products = all_products.filter(name__contains=request.GET.get('search_terms'))
+        
     return render(request, 'catalog/products.template.html', {
-        'all_products': all_products
+        'all_products': all_products,
+        'search_form': form
     })
 
 

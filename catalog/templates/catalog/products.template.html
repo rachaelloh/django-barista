@@ -1,16 +1,24 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% load static %}
 
 {% block content %}
 
 <h1>Our Products</h1>
+
+<form method='GET'>
+    {{ search_form|crispy}}
+    <input type='submit' value='Search'/>
+</form>
     <ul>
         {% for product in all_products %}
         <li>
             Category: {{ product.Category.name }} |
             
-            {{product.name}}
+            {{product.name}} <br>
+            
+            Price: {{ product.price }}
             
             {%if product.image %}
                 <img src="{{product.image.cdn_url}}" alt='cover image for {{product.name}}'/>
