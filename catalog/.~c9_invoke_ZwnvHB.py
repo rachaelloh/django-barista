@@ -17,7 +17,7 @@ def show_products(request):
         all_products = all_products.filter(cost__gte=request.GET.get('min_cost'))
         
     if request.GET.get('max_cost'):
-        all_products = all_products.filter(cost__lte=request.GET.get('max_cost'))
+        all_pro = all_courses.filter(cost__lte=request.GET.get('max_cost'))
         
     return render(request, 'catalog/products.template.html', {
         'all_products': all_products,
