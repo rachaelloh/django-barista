@@ -11,7 +11,7 @@ class Product(models.Model):
     image = ImageField(blank=True)
     
     def __str__(self):
-        return self.name + " $" + str(self.price) + " (x" + str(self.stock) + ")"
+        return self.name + " $" + str(self.price)
     
 
 # Create Category Field

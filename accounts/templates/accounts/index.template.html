@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block page_title %}
 Home Page
 {% endblock %}
 
 {% block page_heading %}
 Home
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<div class="row">
+  <div class="col-md-12"></div>
+  <div class="col-md-12">
+      <center>Welcome to Rach's Coffee Roasters. You can be assured that we personally select the best quality coffee beans for our consumers. Start shopping by creating an account, login and selecting the best coffee product for you.</center>
+      
+    <br><br></div>
+<div class="col-md-4"></div>
+</div> 
+</div>
+
+     <div class="index-banner">
+<img class="featurette-image img-responsive" src="{% static 'images/index-coffee.jpg' %}"  alt="main-logo">
+</div>
+
 {% endblock %}
