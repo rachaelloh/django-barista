@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
 <h1>My Cart</h1>
-<ul>
+<div class="card">
+    
     {%for id,product in shopping_cart.items %}
-        <li>
-            {{product.name}}<br/>
-            ${{product.price}}
-            <a href="{% url 'remove_from_cart' product_id=product.id %}"> Remove from Cart</a>
-        </li>
-    {%endfor%}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ product.image_url }}" alt="product-image">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+            <br/>
+            <p class="card-text"> SGD $ {{product.price}} </p>
+            <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn btn-primary"> Remove from Cart</a>
 
-</ul>
+    {%endfor%}
+    
+</div>
+</div>
+</div>
+</div>
+
+
+
 {% endblock %}
+
