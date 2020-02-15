@@ -21,3 +21,17 @@
 img {
     width: 100%;
 }
+
+/*card to display categories*/
+
+.card {
+    display: inline-block;
+}
+
+.card img {
+    height: 200px;
+}
+
+h2 {
+    margin-top: 20px;
+}

@@ -22,7 +22,44 @@ Home
 </div>
 
      <div class="index-banner">
-<img class="featurette-image img-responsive" src="{% static 'images/index-coffee.jpg' %}"  alt="main-logo">
+<img src="{% static 'images/index-coffee.jpg' %}"  alt="coffee-image">
+</div>
+
+<div class="container">
+    <h2>Coffee Categories</h2>
+    <div class="card-group">
+<!--card cat 1-->
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/ground-coffee.jpg' %}" alt="ground-coffee">
+  <div class="card-body">
+    <h5 class="card-title">Ground Coffee</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+
+<!--card cat 2-->
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/instant-coffee.jpg' %}" alt="instant-coffee">
+  <div class="card-body">
+    <h5 class="card-title">Instant Coffee</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+
+<!--card cat 3-->
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/coffee-beans.jpg' %}" alt="coffee-beans">
+  <div class="card-body">
+    <h5 class="card-title">Coffee Beans</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+
+</div>
+</div>
 </div>
 
 {% endblock %}
