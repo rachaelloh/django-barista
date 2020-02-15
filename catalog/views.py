@@ -14,10 +14,10 @@ def show_products(request):
         all_products = all_products.filter(name__contains=request.GET.get('search_terms'))
         
     if request.GET.get('min_cost'):
-        all_products = all_products.filter(cost__gte=request.GET.get('min_cost'))
+        all_products = all_products.filter(price__gte=request.GET.get('min_cost'))
         
     if request.GET.get('max_cost'):
-        all_products = all_products.filter(cost__lte=request.GET.get('max_cost'))
+        all_products = all_products.filter(price__lte=request.GET.get('max_cost'))
         
     return render(request, 'catalog/products.template.html', {
         'all_products': all_products,
