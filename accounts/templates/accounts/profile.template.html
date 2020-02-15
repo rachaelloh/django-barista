@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Welcome {{ user.name }} to Rach's Coffee Roasters, you are succesfully logged in!</h2>
+<h1>My Account</h1>    
+    <p>Welcome {{ user }}, you are succesfully logged in!</p>
     <p>You are logged in with the following email address: {{ user.email }} </p>
+    
+<!--<p>Forgotten your password?</p>-->
+<!--<p><a href="{% url 'password_reset' %}" class="btn btn-warning">Reset password</a></p>-->
+<!--<p><a href="{% url 'password_change' %}" class="btn btn-warning">Change password</a></p>-->
+</div>
 
 {% endblock %}
