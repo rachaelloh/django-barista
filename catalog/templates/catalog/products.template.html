@@ -11,23 +11,76 @@
     {{ search_form|crispy}}
     <input type='submit' value='Search'/>
 </form>
-    <ul>
-        {% for product in all_products %}
-        <li>
-            Category: {{ product.Category.name }} |
-            
-            {{product.name}} <br>
-            
-            Price: {{ product.price }}
-            
-            {%if product.image %}
+    
+<div class="row row-flex">
+    {% for product in all_products %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+            <div class="panel-body">
                 <img src="{{product.image.cdn_url}}" alt='cover image for {{product.name}}'/>
-            {%endif%}
-            <a href="{% url 'update_product' product_id=product.id %}">Update</a> |
-            <a href="{% url 'add_to_cart' product_id=product.id %}">Add to Cart</a>
-        </li> 
-        {% endfor %}
-    </ul>
+                
+                <h3>{{ product.name }}</h3> | <a href="{% url 'update_product' product_id=product.id %}">Update</a>
+                <p class="product-description">{{ product.description }}</p>
+                <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span> {{ product.price }}</p>
+
+                <form method="post" action="{% url 'add_to_cart' product_id=product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+    
+    
+<!--<section class="games">-->
+<!--    <div class="row">-->
+<!--        {% for game in all_games %}-->
+<!--        <div class="col-md-6 col-lg-3 mb-4">-->
+<!--            <div class="card">-->
+<!--                <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">{{game.name}}</h5>-->
+<!--                    <span class="card-text price_strikethrough">${{game.price}}</span>-->
+<!--                    <span class="card-text">${{game.price}}</span>-->
+<!--                    <br />-->
+<!--                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-outline-success">ADD TO CART</a>-->
+<!--                    <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-warning">MORE INFO</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</section>-->
+    
+    
+    
+    
+    
+    <!--<ul>-->
+    <!--    {% for product in all_products %}-->
+    <!--    <li>-->
+    <!--        Category: {{ product.Category.name }} |-->
+            
+    <!--        {{product.name}} <br>-->
+            
+    <!--        Price: {{ product.price }}-->
+            
+    <!--        {%if product.image %}-->
+    <!--            <img src="{{product.image.cdn_url}}" alt='cover image for {{product.name}}'/>-->
+    <!--        {%endif%}-->
+    <!--        <a href="{% url 'update_product' product_id=product.id %}">Update</a> |-->
+    <!--        <a href="{% url 'add_to_cart' product_id=product.id %}">Add to Cart</a>-->
+    <!--    </li> -->
+    <!--    {% endfor %}-->
+    <!--</ul>-->
+
+
+
 
 
 {% endblock %}
