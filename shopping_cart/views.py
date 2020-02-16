@@ -1,11 +1,12 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
-
 from catalog.models import Product
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
+@login_required
 def add_to_cart(request, product_id):
     # attempt to get existing cart from the session using the key "shopping_cart"
     # the second argument will be the default value if 
@@ -22,6 +23,7 @@ def add_to_cart(request, product_id):
             'price': str(product.price),
             'image_url':product.image.cdn_url,
             'quantity':1,
+            'total_price':float(product.price)
             }
         
         # save the cart back to sessions
@@ -38,13 +40,49 @@ def add_to_cart(request, product_id):
             'total_price':total_price
         })
         
+        
+    
+def total_price(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    cart = request.session.get('shopping_cart', {})
+    cart[product_id] = {
+    'id':product_id,
+    'name': product.name,
+    'price': str(product.price),
+    'image_url':product.image.cdn_url,
+    'quantity':cart['quantity'],
+    'total_price':round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
+    }
+    request.session['shopping_cart'] = cart
+    print(cart[product_id]['quantity'])        
+    return render(request, 'shopping_cart/view_cart.template.html', {
+            'total_price':total_price
+        })        
+     
+def minus_from_cart(request, product_id):
+    cart = request.session.get('shopping_cart', {})
+    if product_id in cart:
+        product = get_object_or_404(Product, pk=product_id) 
+        if cart[product_id]['quantity'] > 1:
+            cart[product_id]['quantity']-=1
+            cart[product_id]['total_price'] = round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
+        # save the cart back to sessions
+            request.session['shopping_cart'] = cart
+        return redirect('/shopping_cart/')    
+    
+        
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
+    overall_total_price = 0.00
+    for id, product in cart.items():
+        overall_total_price += product['total_price']
     
     return render(request, 'shopping_cart/view_cart.template.html', {
-        'shopping_cart':cart
+        'shopping_cart':cart,
+        'overall_total_price': round(overall_total_price, 2)
     })
+    
     
     
 def remove_from_cart(request, product_id):
