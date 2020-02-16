@@ -12,7 +12,7 @@ def show_products(request):
     all_products = Product.objects.all()
     if request.GET.get('search_terms'):
         all_products = all_products.filter(name__contains=request.GET.get('search_terms'))
-        
+
     if request.GET.get('min_cost'):
         all_products = all_products.filter(price__gte=request.GET.get('min_cost'))
         

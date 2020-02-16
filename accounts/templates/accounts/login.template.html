@@ -5,18 +5,17 @@
 Login
 {% endblock %}
 
-{% block page_heading %}
-Login to your account
-{% endblock %}
 
 {% load crispy_forms_tags %}
 {% block content %}
 {{ form.media }}
-
+<h1>Login to start shopping!</h1>
+<p>If you have not created an account yet, please register <a href="{% url 'register' %}">here.</a></p>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" name="Login"/>
+    <input type="submit" class="btn btn-primary" name="Login"/>
+    <a href="{% url 'password_reset' %}" class="btn btn-danger mb-3 forgot_password">Forgot Password</a>
 </form>
 
 <hr> {% if messages %}

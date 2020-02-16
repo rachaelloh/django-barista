@@ -1,6 +1,6 @@
 from django.urls import path, include
-from .views import index, logout, login, profile, register 
-# ,password_reset
+from .views import index, logout, login, profile, register
+# , password_reset
  
 urlpatterns = [
     path('', index, name='index'),

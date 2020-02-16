@@ -11,13 +11,14 @@ Register Here!
 {% endblock %}
 
 {% block content %}
+<h1>Register an Account Now!</h1>
 <p><a href ="{% url 'login' %}">Sign in </a> here if you already have an account</p>
 
 {{ form.media }}
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type='submit'/>
+        <input type='submit'class="btn btn-primary"/>
     </form>
 
 {% endblock %}
