@@ -13,22 +13,27 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully logged out")
     return redirect(reverse('index'))
+
     
 def login(request):
     if request.method == 'POST':
         login_form = UserLoginForm(request.POST)
-        
-        if login_form.is_valid():
-            user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
-            messages.success(request, "You have successfully logged in")
-            if user:
-                auth.login(user=user, request=request)
-                return redirect(reverse('index'))
-            else:
-                login_form.add_error(None, "Invalid username or password")
-                return render(request, 'accounts/login.template.html', {
-                    'form': login_form
-                })
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+
+        # if user is valid
+        if user:
+            auth.login(user=user, request=request)
+            messages.success(request, "You have successfully logged in!")
+            return redirect(reverse('show_products')) 
+            
+        # if username or password not valid    
+        else:
+            login_form.add_error(None, "Invalid username or password")
+            return render(request, 'accounts/login.template.html', {
+                'form': login_form
+            })
     else:
         login_form = UserLoginForm()
         return render(request, 'accounts/login.template.html', {
