@@ -55,6 +55,13 @@ h2 {
     height: 2.4rem;
 }
 
+/*container*/
+.container {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
 /*FOR FOOTER*/
 
 p.copyright {
