@@ -1,19 +1,3 @@
-.row.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.panel-default {
-    border-color: transparent;
-    padding: 0 10px;
-}
-
-.panel-body {
-    height: 100%;
-    border: 1px solid #ddd;
-}
-
 .product-description {
     min-height: 40px;
 }
@@ -30,6 +14,7 @@ img {
 
 .card img {
     height: 200px;
+    
 }
 
 h2 {
@@ -40,4 +25,118 @@ h2 {
 
 .h3, h3 {
     color: coral;
+}
+
+/*shopping cart*/
+.cart {
+    margin-bottom: 30rem;
+    /*border: 3px solid red;*/
+}
+
+.cart img {
+    width: 4rem;
+}
+
+.cart i {
+    color: orange;
+}
+
+.cart .dustbin {
+    color: red;
+}
+
+.cart .shopping {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+
+.cart .checkout {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    height: 2.4rem;
+}
+
+/*FOR FOOTER*/
+
+p.copyright {
+    color: white;
+    line-height: 50px;
+    font-size: 1.5em;
+    text-align: left;
+    font-family: 'Dancing Script', sans-serif;
+}
+
+footer.footer {
+    background: black;
+    padding: 10px 0;
+    margin: 5px 0;
+}
+
+div.footer {
+    width: 100%;
+}
+
+ul.social-network {
+	list-style: none;
+	display: inline;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoInstagram:hover {
+	background-color:#fe4164;
+}
+.social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoInstagram:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:0%;
+	-webkit-border-radius:50%;
+	border-radius:60%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+	background-color: #D3D3D3;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
 }

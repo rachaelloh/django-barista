@@ -15,7 +15,7 @@
 
 
 <!--</ul>-->
- <div class="container">
+<!--<div class="container">-->
 <section class="shopping_cart">
 <table class="table cart">
     <thead>
@@ -54,7 +54,7 @@
         <tr>
             <td colspan="12">
 
-                <a class='btn btn-warning float-right ml-2 proceed_checkout' href='{% url 'checkout' %}'><span class="fa fa-check-circle-o" aria-hidden="true"></span>Proceed to checkout</a>
+                <a class='btn btn-warning float-right ml-2 checkout' href='{% url 'checkout' %}'><span class="fa fa-check-circle-o" aria-hidden="true"></span>Proceed to checkout</a>
                 <a class='btn btn-outline-warning float-right shopping' href='{% url 'show_products' %}'>Continue shopping</a>
             </td>
         </tr>
@@ -62,7 +62,7 @@
 </table>
 
 </section>
-</div>
+<!--</div>-->
 
 
 {% endblock %}

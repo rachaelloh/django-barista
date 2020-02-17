@@ -25,7 +25,7 @@ def login(request):
         # if user is valid
         if user:
             auth.login(user=user, request=request)
-            messages.success(request, "You have successfully logged in!")
+            messages.success(request, "Successfully logged in as " + username)
             return redirect(reverse('show_products')) 
             
         # if username or password not valid    
