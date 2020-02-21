@@ -24,20 +24,23 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated and user.is_superuser %}
+            <a class="nav-link" href="{% url 'create_product' %}"><i class="fa fa-heart"></i> Add a Product</a>
+            {% endif %}
       <li class="nav-item"><a class="nav-link" href="{% url 'show_products' %}"><i class="fa fa-coffee"></i>Products</a></li>
         {% if user.is_authenticated %}
         <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i>My Account</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Logout</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i> Cart ({{number_of_items}})
-                {% if product_count > 0 %}
-                <label class="badge badge-warning">{{ product_count }}</label>
-                {% endif %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i> Cart ({{number_of_items}})</a></li>
+                <!--{% if product_count > 0 %}-->
+                <!--<label class="badge badge-warning">{{ product_count }}</label>-->
+                <!--{% endif %}-->
         {% else %}
         <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"> <i class="fa fa-user-plus"></i>Register</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"> <i class="fa fa-sign-in"></i>Log In</a></li>
         {% endif %}
-            </a>
-        </li>
+            
+        
       </ul>
   </div>
 </nav>

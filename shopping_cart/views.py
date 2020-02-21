@@ -13,10 +13,10 @@ def add_to_cart(request, product_id):
     # if the key does not exist in the session
     cart = request.session.get('shopping_cart', {})
     
-    # we check if the product_id is not in the cart. If so, we will add it
+    # we check if the game_id is not in the cart. If so, we will add it
     if product_id not in cart:
         product = get_object_or_404(Product, pk=product_id)
-        # product is found, let's add it to the cart
+        # game is found, let's add it to the cart
         cart[product_id] = {
             'id':product_id,
             'name': product.name,
@@ -28,18 +28,33 @@ def add_to_cart(request, product_id):
         
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
-        messages.success(request, "Product has been added to your cart!")
+        messages.success(request, "Game has been added to your cart")
         return redirect('/shopping_cart/')
-        # return render(request, 'catalog/product.template.html')  
+        
+    # elif game_id in cart:    
+        # if press again
+        # messages.success(request, "The game is already in your shopping cart")
+        # return redirect('/cart/')
         
     else:
-        cart[product_id]['quantity']+=1
-        request.session['shopping_cart'] = cart
-        total_price = round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
-        return render(request, 'shopping_cart/view_cart.template.html', {
-            'total_price':total_price
-        })
         
+        cart[product_id]['quantity']+=1
+        cart[product_id]['total_price'] = round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
+        request.session['shopping_cart'] = cart
+        return redirect('/shopping_cart/')        
+
+        
+        
+def minus_from_cart(request, product_id):
+    cart = request.session.get('shopping_cart', {})
+    if product_id in cart:
+        product = get_object_or_404(Product, pk=product_id) 
+        if cart[product_id]['quantity'] > 1:
+            cart[product_id]['quantity']-=1
+            cart[product_id]['total_price'] = round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
+        # save the cart back to sessions
+            request.session['shopping_cart'] = cart
+        return redirect('/shopping_cart/')          
         
     
 def total_price(request, product_id):
@@ -59,16 +74,6 @@ def total_price(request, product_id):
             'total_price':total_price
         })        
      
-def minus_from_cart(request, product_id):
-    cart = request.session.get('shopping_cart', {})
-    if product_id in cart:
-        product = get_object_or_404(Product, pk=product_id) 
-        if cart[product_id]['quantity'] > 1:
-            cart[product_id]['quantity']-=1
-            cart[product_id]['total_price'] = round(int(cart[product_id]['quantity']) * float(cart[product_id]['price']),2)
-        # save the cart back to sessions
-            request.session['shopping_cart'] = cart
-        return redirect('/shopping_cart/')    
     
         
 def view_cart(request):

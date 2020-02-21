@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product
 from .forms import ProductForm, ProductSearchForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
+
 
 
 # Create your views here.
@@ -26,6 +28,7 @@ def show_products(request):
 
 
 # Create Product
+@user_passes_test(lambda u: u.is_superuser)
 def create_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST)
@@ -42,7 +45,7 @@ def create_product(request):
     })
     
 # Update/Edit Product
-
+@user_passes_test(lambda u: u.is_superuser)
 def update_product(request, product_id):
     product_updated = get_object_or_404(Product, pk=product_id)
     
@@ -62,7 +65,7 @@ def update_product(request, product_id):
             
 
 # Confirm Product to be deleted
-
+@user_passes_test(lambda u: u.is_superuser)
 def confirm_delete_product(request, product_id):
     delete_product = get_object_or_404(Product, pk=product_id)
     return render(request, 'catalog/confirm_delete_product.template.html', {
@@ -70,7 +73,7 @@ def confirm_delete_product(request, product_id):
     })
     
 # Actually deleting Product
-
+@user_passes_test(lambda u: u.is_superuser)
 def actually_delete_product(request, product_id):
     product_being_deleted = get_object_or_404(Product, pk=product_id)
     product_being_deleted.delete()
