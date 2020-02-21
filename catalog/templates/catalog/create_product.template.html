@@ -2,16 +2,14 @@
 
 {% load crispy_forms_tags %}
 
-{% block page_heading %}
-Create Product
-{% endblock %}
 
     {% block content %}
+    <h1>Add a Product!</h1>
     {{ form.media }}
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type='submit' value='Create Product'/>
+        <input type='submit'class="btn btn-primary" value='Create Product'/>
     </form>
 
     {% endblock %}
