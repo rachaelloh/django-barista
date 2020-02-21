@@ -87,7 +87,7 @@
                     </span>
                     {% if user.is_authenticated and user.is_superuser %}
                         <p><a href="{% url 'update_product' product_id=product.id %}" class="btn btn-primary">Update Product</a></p>
-                        <p><a href="{% url 'delete_product' product_id=product.id %}" class="btn btn-danger">Delete Product</a></p>
+                        <p><a href="{% url 'confirm_delete_product' product_id=product.id %}" class="btn btn-danger">Delete Product</a></p>
                     {% endif %}
                     </div>
                     </form>

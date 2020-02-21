@@ -5,7 +5,7 @@
     <p>Product Name: {{product.name}}</p>
     <form method='POST' action='{% url "delete_product" product_id=product.id %}'>
         {% csrf_token %}
-        <input type='submit' value='Yes, delete'>
-        <a href='{% url "show_products" %}'>No</a>
+        <input class='btn btn-danger' type='submit' value='Yes, delete'>
+        <a class='btn btn-primary' href='{% url "show_products" %}'>No</a>
     </form>
 {% endblock %}
