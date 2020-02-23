@@ -13,9 +13,27 @@ Visitors will be able to view the shop’s short introduction, contact the shop,
 | 4    | As someone who is a frequent visitor of the shop, I want to continue enjoying the convenience of ordering my favourite coffee online.|
 
 
-
 The website will be designed based on the identified goals and hence allow users to do the following:
 
+-view coffee products available on the website
+
+-add coffee products to shopping cart (only when logged in)
+
+-remove items from shopping cart (only when logged in)
+
+-checkout from shopping cart and make payment through Stripe (only when logged in)
+
+-search coffee products by names
+
+-search products by cost
+
+-register for an account for new users who wish to purchase products
+
+-add new products (only when signed in as superuser)
+
+-update product information (only when signed in as superuser)
+
+-delete product (only when signed in as superuser)
 
 
 
