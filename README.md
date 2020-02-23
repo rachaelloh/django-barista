@@ -41,23 +41,13 @@ The website will be designed based on the identified goals and hence allow users
 
 [Wireframes DataCentric](https://drive.google.com/open?id=1UnhRookhnV4_G75Wt2_pGjqgzN7CFKan)
 
-## Project Skeleton - Features
+### Project Skeleton - Features
 
 **Existing Features**
 
--The Recipe Sharing logo on the top left side of the navbar links to the mainpage.
+-On left hand side of the navigation bar, it shows the name of the coffee shop ‘Rach’s Coffee Roasters’ which links to the homepage of the site. The homepage shows main banner of the page which will appear in every html pages and shows a short introduction to the site. It also shows the 3 main categories of coffee available in the store and users can click on link to start looking at the products.
 
--The Search by Cuisine button allows users to search for recipes by cuisines where it is designed to be case insensitive.
-
--The All Recipes button allows users to see all the recipes available in the website that has been added by other users.
-
--The Add Recipe button allows users to add recipe to the website.
-
--Users can click on the edit button if they want to update or change details of specific recipes.
-
--Users can click on the delete button if they want to remove a specific recipe from the website.
-
--Users can click on the view button to see the details of the specific recipe where the ingredients will be returned as an unordered list and the cooking steps will be returned as an ordered list. Users will have to add semicolon after each steps to denote a separation of each step.
+-The next link on the navigation bar shows **Products** which redirects users to the show_products page when the link is being clicked. Users will be able to see all products with the name, category, description, image, and price. They will be able to add input quantity by typing in the number or clicking on the arrows. They can then click on ‘add’ which will add_to_cart the product selected and will be redirected to the shopping_cart page. When item has been added, a flash message will appear saying ‘Product has been added to your cart’ and users can dismiss message by clicking on the ‘x’.
 
 
 **Feature(s) for Future Implementation**
