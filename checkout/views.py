@@ -43,9 +43,16 @@ def checkout(request):
     
     
 def checkout_success(request):
-    # Empty the shopping cart
     request.session['shopping_cart'] = {}
-    return HttpResponse("Checkout success")
+    return render(request, 'checkout/thanks.template.html')
     
 def checkout_cancelled(request):
-    return HttpResponse("Checkout cancelled")
+    all_products = Product.objects.all()
+    min_price=1
+    max_price=99
+    
+    return render(request, 'catalog/products.template.html', {
+        'all_products':all_products,
+        'min_price':min_price,
+        'max_price':max_price
+    })
