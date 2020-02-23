@@ -49,6 +49,10 @@ The website will be designed based on the identified goals and hence allow users
 
 -The next link on the navigation bar shows **Products** which redirects users to the show_products page when the link is being clicked. Users will be able to see all products with the name, category, description, image, and price. They can click on ‘add to cart’ which will add_to_cart the product selected and will be redirected to the shopping_cart page. When item has been added, a flash message will appear saying ‘Product has been added to your cart’ and users can dismiss message by clicking on the ‘x’.
 
+#### For users who are not logged in
+-Following which shows **Register** which redirects users to the register page when the link is clicked. This page allows new users to register for an account to start shopping. The page also shows the link for users to sign in if they already have an account. When account has been registered, a flash message will appear which says ‘You have successfully registered’ and users can dismiss message by clicking on the ‘x’.
+
+-Lastly on the navigation bar shows the **Log In** link which allows users to log in if they have already registered an account previously. Users will log in with their username and password. When user has logged in, there will be a flash message which says ‘Logged in as <username>’ and users can dismiss message by clicking on the ‘x’. There is also a link for new users to the register page to register an account. Users can also click on forget password where they can enter their email address for instructions to be sent to them. This is a Django default password reset page.
 
 **Feature(s) for Future Implementation**
 
