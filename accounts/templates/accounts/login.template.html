@@ -14,7 +14,7 @@ Login
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" class="btn btn-primary" name="Login"/>
+    <input type="submit" class="btn btn-primary" name="Login"/> <br><br>
     <a href="{% url 'password_reset' %}" class="btn btn-danger mb-3 forgot_password">Forgot Password</a>
 </form>
 
