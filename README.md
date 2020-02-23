@@ -54,6 +54,17 @@ The website will be designed based on the identified goals and hence allow users
 
 -Lastly on the navigation bar shows the **Log In** link which allows users to log in if they have already registered an account previously. Users will log in with their username and password. When user has logged in, there will be a flash message which says ‘Logged in as <username>’ and users can dismiss message by clicking on the ‘x’. There is also a link for new users to the register page to register an account. Users can also click on forget password where they can enter their email address for instructions to be sent to them. This is a Django default password reset page.
 
+#### For users who are logged in
+-After the ‘Products’ link, they will see a **My Account** link which will redirect users to the page which shows them what they are logged in as. 
+
+-They will then see the **Log Out** link which logs users out and redirect them back to the show_products/index page. When user has logged out, there will be a flash message which says ‘You have successfully logged out’ and users can dismiss message by clicking on the ‘x’.
+
+-Lastly, they will see the **Cart** link which will display the number of items that has been added to the cart. When clicked, users will be directed to the view_cart page where they will be able to view their cart items where the product image, name, category, description and price will be displayed. Users can also choose to adjust their shopping cart quantity, choose to checkout or continue shopping. 
+
+-When users click on checkout, they will be redirected to the payment page using Stripe Online Payment Platform. The items that they have checked out and the amount that they have to pay will be displayed and they will be able to pay using their credit card. Upon successful payment, users will be directed to a thank you page.
+
+
+
 **Feature(s) for Future Implementation**
 
 Implement sign in feature for users such that only signed in users can share recipes and only delete their own recipes.
