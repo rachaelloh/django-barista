@@ -79,6 +79,10 @@ p.copyright {
     font-family: 'Dancing Script', sans-serif;
 }
 
+p.contact {
+    color: #FF99CC;
+}
+
 footer.footer {
     background: black;
     padding: 10px 0;

@@ -47,7 +47,7 @@ The website will be designed based on the identified goals and hence allow users
 
 -On left hand side of the navigation bar, it shows the name of the coffee shop ‘Rach’s Coffee Roasters’ which links to the homepage of the site. The homepage shows main banner of the page which will appear in every html pages and shows a short introduction to the site. It also shows the 3 main categories of coffee available in the store and users can click on link to start looking at the products.
 
--The next link on the navigation bar shows **Products** which redirects users to the show_products page when the link is being clicked. Users will be able to see all products with the name, category, description, image, and price. They will be able to add input quantity by typing in the number or clicking on the arrows. They can then click on ‘add’ which will add_to_cart the product selected and will be redirected to the shopping_cart page. When item has been added, a flash message will appear saying ‘Product has been added to your cart’ and users can dismiss message by clicking on the ‘x’.
+-The next link on the navigation bar shows **Products** which redirects users to the show_products page when the link is being clicked. Users will be able to see all products with the name, category, description, image, and price. They can click on ‘add to cart’ which will add_to_cart the product selected and will be redirected to the shopping_cart page. When item has been added, a flash message will appear saying ‘Product has been added to your cart’ and users can dismiss message by clicking on the ‘x’.
 
 
 **Feature(s) for Future Implementation**
