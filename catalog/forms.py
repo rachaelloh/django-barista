@@ -9,6 +9,6 @@ class ProductForm(forms.ModelForm):
         fields=('name', 'description', 'price', 'Category', 'image')
         
 class ProductSearchForm(forms.Form):
-    search_terms = forms.CharField(required=False)
+    search_by_name = forms.CharField(required=False)
     min_cost = forms.FloatField(required=False, min_value=0)
     max_cost = forms.FloatField(required=False)

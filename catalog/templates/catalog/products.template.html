@@ -13,59 +13,6 @@
 </form>
 <br>
     
-<!--<div class="row row-flex">-->
-<!--    {% for product in all_products %}-->
-<!--        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">-->
-<!--            <div class="panel-body">-->
-<!--                <img src="{{product.image.cdn_url}}" alt='cover image for {{product.name}}'/>-->
-<!--                <h3>{{ product.name }}</h3> -->
-<!--                <h4> Category: {{ product.Category }} </h4>| <a href="{% url 'update_product' product_id=product.id %}">Update</a>-->
-<!--                <p class="product-description">{{ product.description }}</p>-->
-<!--                <p> SGD <span class="fa fa-usd" aria-hidden="true"></span> {{ product.price }}</p>-->
-
-<!--                <form method="post" action="{% url 'add_to_cart' product_id=product.id %}">-->
-<!--                    {% csrf_token %}-->
-<!--                    <div class="input-group">-->
-<!--                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">-->
-<!--                        <span class="input-group-btn">-->
-<!--                            <button class="btn btn-success" type="submit">Add</button>-->
-<!--                        </span>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    {% endfor %}-->
-<!--</div>-->
-    
-    
-<!--<div class="row">-->
-<!--    {% for product in all_products %}-->
-<!--    <div class="col-md-6 col-lg-3 mb-4"></div>-->
-<!--    <div class="card-group">-->
-<!--        <div class="card" style="width: 18rem;">-->
-<!--  <img class="card-img-top" src="{{product.image.cdn_url}}" alt="cover image for {{product.name}}">-->
-<!--  <div class="card-body">-->
-<!--    <h3 class="card-title">{{ product.name }}</h3>-->
-<!--    <h4> Category: {{ product.Category }} </h4>| <a href="{% url 'update_product' product_id=product.id %}">Update</a>-->
-<!--    <p class="card-text product-description">{{ product.description }}</p>-->
-<!--    <p> SGD <span class="fa fa-usd" aria-hidden="true"></span> {{ product.price }}</p>-->
-<!--    <form method="post" action="{% url 'add_to_cart' product_id=product.id %}">-->
-<!--        {% csrf_token %}-->
-<!--        <div class="input-group">-->
-<!--            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">-->
-<!--            <span class="input-group-btn">-->
-<!--                <button class="btn btn-success" type="submit">Add</button>-->
-<!--            </span>-->
-<!--        </div>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div> -->
-<!--    {% endfor %}-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-    
-    
 
     <div class="row">
         {% for product in all_products %}
@@ -78,9 +25,9 @@
                     <p class="card-text product-description">{{ product.description }}</p>
                     <p> SGD <span class="fa fa-usd" aria-hidden="true"></span> {{ product.price }}</p>
             
-                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-sm height-auto px-4 py-3 btn-primary"><i class="fa fa-plus-circle add_to_cart"></i> ADD TO CART</a>
+                    <p><a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> ADD TO CART</a></p>
                     {% if user.is_authenticated and user.is_superuser %}
-                        <p><a href="{% url 'update_product' product_id=product.id %}" class="btn btn-primary">Update Product</a></p>
+                        <p><a href="{% url 'update_product' product_id=product.id %}" class="btn btn-warning">Update Product</a></p>
                         <p><a href="{% url 'confirm_delete_product' product_id=product.id %}" class="btn btn-danger">Delete Product</a></p>
                     {% endif %}
             </div>
