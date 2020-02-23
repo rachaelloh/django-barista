@@ -73,9 +73,10 @@ The website will be designed based on the identified goals and hence allow users
 
 **Feature(s) for Future Implementation**
 
-Implement sign in feature for users such that only signed in users can share recipes and only delete their own recipes.
-
-The ability to upload images for individual recipes.
+1) To allow users to add ratings and reviews for the coffee products
+2) To add a live chat bot to answer user queries in real time
+3) To add in the function of stock taking so that staffs do not need to keep track of the products’ stocks level. They will be notified to stock up on items that are low on stock count.
+4) When users click on each category in the home page (index.template.html), their results will be filtered according to the category that they have selected.
 
 
 ## Testing (Manual)
