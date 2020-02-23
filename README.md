@@ -63,6 +63,12 @@ The website will be designed based on the identified goals and hence allow users
 
 -When users click on checkout, they will be redirected to the payment page using Stripe Online Payment Platform. The items that they have checked out and the amount that they have to pay will be displayed and they will be able to pay using their credit card. Upon successful payment, users will be directed to a thank you page.
 
+#### For superusers who are logged in
+-Before the ‘Products’ link, they will see a **Add Product** link where they will be redirected to the create_product page. They will see a form which allows them to add products by inputting the name, description, category, price, image of the product where all fields are mandatory.
+
+-At the **Products** (show_products) page, they will see the ‘update product’ button. When clicked, they will be redirected to the update_product page where they will be able to make changes to the product such as the name, description, category, price, and image of the particular product that they have selected.
+
+-At the **Products** (show_products) page, they will see the ‘delete product’ button. When clicked, they will be redirected to the confirm_delete_product page where they will be asked to confirm their deletion. If they click ‘yes’, delete_product will be rendered and the product will be deleted. If they click no, they will be redirected back to the show_products page.
 
 
 **Feature(s) for Future Implementation**
