@@ -23,7 +23,7 @@ def checkout(request):
             'name': product.name,
             'amount': int(product.price*100), #convert to cents, in integer
             'currency':'sgd',
-            'quantity':1
+            'quantity':cart[id]['quantity']
         })
     
     #generate the session
@@ -39,6 +39,8 @@ def checkout(request):
         'session_id':session.id,
         'public_key': settings.STRIPE_PUBLISHABLE_KEY
     })
+    
+    
     
 def checkout_success(request):
     # Empty the shopping cart

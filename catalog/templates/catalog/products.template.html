@@ -77,16 +77,8 @@
                     <h4> Category: {{ product.Category }} </h4>
                     <p class="card-text product-description">{{ product.description }}</p>
                     <p> SGD <span class="fa fa-usd" aria-hidden="true"></span> {{ product.price }}</p>
-                    <br />
-                    <form method="post" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add</button>
-                    </span>
-                    </div>
-                    </form>
+            
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-sm height-auto px-4 py-3 btn-primary"><i class="fa fa-plus-circle add_to_cart"></i> ADD TO CART</a>
                     {% if user.is_authenticated and user.is_superuser %}
                         <p><a href="{% url 'update_product' product_id=product.id %}" class="btn btn-primary">Update Product</a></p>
                         <p><a href="{% url 'confirm_delete_product' product_id=product.id %}" class="btn btn-danger">Delete Product</a></p>

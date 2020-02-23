@@ -12,7 +12,6 @@ def add_to_cart(request, product_id):
     # the second argument will be the default value if 
     # if the key does not exist in the session
     cart = request.session.get('shopping_cart', {})
-    quantity = int(request.POST.get('quantity'))
     # we check if the product_id is not in the cart. If so, we will add it
     if product_id not in cart:
         product = get_object_or_404(Product, pk=product_id)
@@ -22,7 +21,7 @@ def add_to_cart(request, product_id):
             'name': product.name,
             'price': str(product.price),
             'image_url':product.image.cdn_url,
-            'quantity':quantity,
+            'quantity':1,
             'total_price':float(product.price)
             }
         
