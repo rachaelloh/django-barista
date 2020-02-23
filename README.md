@@ -1,31 +1,22 @@
 # Rach's Coffee Roasters - Full Stack Django Project 4
 
-## Introduction
-This project is developed with the intention for users to share their recipes with others. The main functions of this Recipe Sharing revolves around the 4 functionalities- Create, Read, Update, Delete.
+### Introduction
+The project consists of an ecommerce site for an online coffee shop called Rach’s Coffee Roasters. The inspiration for this website came from my personal love for coffee which also brings my friends and myself closer together.
+Visitors will be able to view the shop’s short introduction, contact the shop, view and search for different categories of coffee (ground coffee, instant coffee, coffee beans). They have to create a user account in order to add items to cart and make purchases. The site is designed in a way where it is intuitive for users to use and the deployed link can be found [here](https://.herokuapp.com/).
 
-Database was stored and retrieved from the backend (MongoDB).
-
-I chose to do recipe sharing as I enjoy cooking and wish to share my personal recipes with others. Likewise, I am also interested in other people's recipes and I can also try them out on my own.
-
-## UX
+### UX
 | User Stories        | Description   |  
 | :------------- |:-------------| 
-| 1    | As someone who enjoys cooking, I want to share my recipes with like-minded people so that they can whip up dishes that they also like.|
-| 2    | As a person who does not know much about cooking, I want to have access to various recipes so that I have the steps for recipes that may interest me.|
-| 3    | As a general user, I wish that there are such recipe sharing platforms so that I can use them whenever I need. |
+| 1    | As someone who loves coffee, I want to be able to make my own quality coffee at the comfort of my home.|
+| 2    | As someone who is a friend of a coffee-lover, I want to be able to look at the different types of products and their descriptions which best suit the taste bud of a friend.|
+| 3    | As someone who just happen to browse through this page, I want to be able to know about the different categories and the taste notes of individual products.|
+| 4    | As someone who is a frequent visitor of the shop, I want to continue enjoying the convenience of ordering my favourite coffee online.|
+
 
 
 The website will be designed based on the identified goals and hence allow users to do the following:
 
--add new recipes to the website where they can include the cuisines, the recipe name, the ingredients, and the cooking steps.
 
--edit any recipe on the website.
-
--view details of the individual recipes.
-
--delete any recipe.
-
--search recipe by cuisines.
 
 
 (i) Wireframes
