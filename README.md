@@ -121,7 +121,9 @@ During the testing process, I found out that:
 * [Uploadcare](https://uploadcare.com/)
 * [Bootstrap4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 * [Google Fonts](https://fonts.google.com/)
-* [Font Awesome](https://fontawesome.com/)
+* [Font Awesome](https://fontawesome.com/) 
+* [GitHub]( https://github.com/)
+* [Stripe](https://stripe.com/en-sg)
 * [Heroku](https://www.heroku.com/)
 
 ## Deployment
