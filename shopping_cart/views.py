@@ -12,29 +12,25 @@ def add_to_cart(request, product_id):
     # the second argument will be the default value if 
     # if the key does not exist in the session
     cart = request.session.get('shopping_cart', {})
-    
-    # we check if the game_id is not in the cart. If so, we will add it
+    quantity = int(request.POST.get('quantity'))
+    # we check if the product_id is not in the cart. If so, we will add it
     if product_id not in cart:
         product = get_object_or_404(Product, pk=product_id)
-        # game is found, let's add it to the cart
+        # product is found, let's add it to the cart
         cart[product_id] = {
             'id':product_id,
             'name': product.name,
             'price': str(product.price),
             'image_url':product.image.cdn_url,
-            'quantity':1,
+            'quantity':quantity,
             'total_price':float(product.price)
             }
         
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
-        messages.success(request, "Game has been added to your cart")
+        messages.success(request, "Product has been added to your cart")
         return redirect('/shopping_cart/')
         
-    # elif game_id in cart:    
-        # if press again
-        # messages.success(request, "The game is already in your shopping cart")
-        # return redirect('/cart/')
         
     else:
         

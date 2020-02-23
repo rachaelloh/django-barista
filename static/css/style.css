@@ -1,3 +1,10 @@
+/*flash message*/
+
+.container .alert {
+    margin-top: 50px;
+}
+
+
 .product-description {
     min-height: 40px;
 }

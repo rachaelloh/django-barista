@@ -5,9 +5,9 @@ from pyuploadcare.dj.models import ImageField
 class Product(models.Model):
     name = models.CharField(blank=False, max_length=200)
     description = models.TextField(blank=False)
-    price = models.DecimalField(max_digits=6, decimal_places=2, blank=False)
+    price = models.DecimalField(blank=False, max_digits=5, decimal_places=2)
     Category = models.ForeignKey("Category", blank=True, null=True, on_delete=models.SET_NULL)
-    
+    quantity = models.PositiveIntegerField(blank=False, default=0)
     image = ImageField(blank=True)
     
     def __str__(self):
@@ -23,3 +23,4 @@ class Category(models.Model):
         
     class Meta:
         verbose_name_plural = "Categories"
+        

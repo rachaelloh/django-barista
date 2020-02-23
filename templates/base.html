@@ -42,23 +42,23 @@
   </div>
 </nav>
 
-
-{% if messages %}
-    <div class="white-text">
-        <div class="center-align messages">
-            <a class="waves-effect waves-light btn-floating amber darken-3"><i class="material-icons">notifications</i></a>
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        </div>
+<!--for flash message-->
+<div class="container">
+    {% if messages %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {% for message in messages %} {{ message }} {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" class="cross">&times;</span>
+  </button>
     </div>
-{% endif %}
+    {% endif %}
+  </div>
 
 <!--Main banner-->
 
 <div class="container">
         <div class="main-logo">
-<img class="featurette-image img-responsive" src="{% static 'images/Home-beans.jpg' %}" style= "margin-bottom: 25px; margin-top: 75px" alt="main-logo">
+<img class="featurette-image img-responsive" src="{% static 'images/Home-beans.jpg' %}" style= "margin-bottom: 25px;" alt="main-logo">
 </div>
 </div>
 
@@ -66,31 +66,6 @@
 <div class='container'>
     {%block content%}{%endblock%}
   </div>
-
-<!--<div class='container-fluid'>-->
-<!--      <div class='alert alert-success'>-->
-<!--         {% if messages %}-->
-<!--          <div>-->
-<!--              {% for message in messages %} {{ message }} {% endfor %}-->
-<!--          </div>-->
-<!--        {% endif %}   -->
-    
-<!--   <ul>-->
-<!--       {% if not user.is_authenticated %}-->
-<!--        <li><a href="{% url 'login' %}">Login</a></li>-->
-<!--         <li><a href="{% url 'register' %}">Register</a></li>-->
-<!--        {% endif %}-->
-       
-<!--        <li>Profile</li>-->
-<!--        {% if user.is_authenticated %}-->
-<!--        <li><a href="{% url 'logout' %}">Logout</a></li>-->
-      
-<!--        {% endif %}-->
-<!--   </ul>-->
-<!--   <h1>{% block page_heading %}{% endblock %}</h1>-->
-   
-
-<!--   </div>-->
  
  
  <!--footer-->

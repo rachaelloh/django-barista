@@ -70,7 +70,7 @@
     <div class="row">
         {% for product in all_products %}
         <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card-group">
+            <div class="card">
                 <a href=""><img src="{{product.image.cdn_url}}" class="card-img-top" alt="cover image for {{product.name}}"></a>
                 <div class="card-body">
                     <h3 class="card-title">{{product.name}}</h3>
@@ -78,19 +78,19 @@
                     <p class="card-text product-description">{{ product.description }}</p>
                     <p> SGD <span class="fa fa-usd" aria-hidden="true"></span> {{ product.price }}</p>
                     <br />
-                    <form method="post" action="{% url 'add_to_cart' product_id=product.id %}">
+                    <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
                     <div class="input-group">
                     <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                     <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Add</button>
                     </span>
+                    </div>
+                    </form>
                     {% if user.is_authenticated and user.is_superuser %}
                         <p><a href="{% url 'update_product' product_id=product.id %}" class="btn btn-primary">Update Product</a></p>
                         <p><a href="{% url 'confirm_delete_product' product_id=product.id %}" class="btn btn-danger">Delete Product</a></p>
                     {% endif %}
-                    </div>
-                    </form>
             </div>
             </div>
         </div>
