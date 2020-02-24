@@ -149,11 +149,134 @@ This repository can also be deployed locally by cloning the repository. This can
 
 ### Heroku Deployment
 
-- Project was also deployed and hosted to heroku. Website can be found [here](https://lzq-recipe-share.herokuapp.com/)
-- Created Procfile and requirements.txt for dependencies.
-- Created new heroku app and set environment variables.
-- Linked Github and environment with Heroku.
-- Project was pushed to Heroku once in awhile to ensure that update features are working.
+The website has been deployed to Heroku with reference to our lecturer Mr Paul Chor Kun Xin's notes/document. <br>
+
+- The following steps are instructions for deployment to Heroku in the terminal:
+
+1. Go to [Heroku](https://dashboard.heroku.com/) and register for an account
+
+2. Install Heroku in your system with this command
+ `sudo snap install heroku --classic`
+
+3. Install these one by one following using pip3:
+````
+sudo apt install libpq-dev python3-dev
+sudo pip3 install gunicorn 
+sudo pip3 install psycopg2
+sudo pip3 install Pillow
+sudo pip3 install whitenoise 
+sudo pip3 install dj_database_url
+````
+
+4. In the `settings.py` file, add Whitenoise to the middleware:
+````
+MIDDLEWARE = [ 
+..... 
+'whitenoise.middleware.WhiteNoiseMiddleware'
+]
+````
+
+5. Create a repository in Github
+
+6. Create a hidden file named `.gitignore` and add `.c9` in the file. Also add the following django files to be ignored taken from [here](https://gitignore.io/api/django)
+
+7. In your terminal, type these commands to add the repository origin from Github:
+````
+git init 
+git add . 
+git commit -m "Initial commit" 
+````
+
+8. Login to Heroku from your terminal by using this command `heroku login -i`
+
+9. Create a new app with a unique name with this command `heroku create <app_name>` replacing the <app_name> with a name of your choice
+
+10. To check if the correct github repository and heroku app are connected to this project, use this command: 
+`git remote -v`
+
+11. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the exported variables from the `.bashrc` in Cloud9 over to Heroku Config Vars (omit quotes)
+
+12. The Procfile contains a command that Heroku will run when the app starts. In the root folder, create a file named Procfile. Open the file and put the following:
+
+```
+web: gunicorn coffee.wsgi:application
+```
+
+where 'coffee' in my project name in this project.
+
+
+13. Inside the `settings.py` add the URL of the heroku app into the ALLOWED_HOST section (without the https)
+
+```
+ALLOWED_HOSTS = ["lzq-django-coffee.herokuapp.com/", "*"]
+```
+
+14. Use this command to create a `requirements.txt` file which lists all the required packages needed for this project:
+````
+pip3 freeze --local > requirements.txt
+````
+
+15. At the project directory level, create a `Static` folder, which should  be on the same level as the `manage.py` file. Place some files inside here like images or text files
+
+16. Add STATIC_ROOT to your settings.py file
+We need this for Whitenoise to work (so that it can serve static files properly):
+
+```
+coffee/settings.py
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+Also make sure when you use static files in your template, you make use of the {% static .... %} helper.
+
+Example
+```
+{% load static %}
+<img src="{% static "images/hi.jpg" %}" alt="Hi!" />
+```
+
+17. Commit all files to Heroku with these commands
+````
+git add . 
+git commit -m "deploy to Heroku" 
+git push heroku master
+````
+
+18. To use the PostgresSQL database, type this to your terminal 
+````
+heroku addons:create heroku-postgresql
+````
+
+19. To check the URL to the database created, run this command
+`heroku config` and copy this URL to be used later
+
+20. In the `.bashrc` file, add the following
+`export DATABASE_URL="database_url"` and restart the bash terminal
+
+21. In the `settings.py` add `import dj_database_url` after all the other import statements
+
+22. In the `settings.py` file, comment out the `DATABASES` section and add the URL copied from Heroku here
+````
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+````
+
+23. Save and restart the terminal
+
+24. Make migrations with this command
+````
+python3 manage.py migrate
+````
+
+25. Commit all files to Heroku with these commands
+````
+git add . 
+git commit -m "Updated settings.py" 
+git push heroku master
+````
+
+26. Make a superuser with this command
+`python manage.py createsuperuser`
+
+27. At the very top right hand side of the page in Heroku, click "Open App". You will now be able to view the project in Heroku
 
 
 ## Credits
