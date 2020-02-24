@@ -147,6 +147,17 @@ My code was written using AWS Cloud9. AWS Cloud9 serves as the local repository 
 
 This repository can also be deployed locally by cloning the repository. This can be done by going to the main page of the repository to clone/download directly into the editor of choice by pasting git clone into terminal.
 
+I deployed the site to Github with the following steps:
+1. Go to this repository's github [link](https://github.com/rachaelloh/django-coffee)
+2. Click on settings --> Github Pages
+3. Select "none" for the Source and then select "master branch"
+
+To deploy the page locally:
+1.	Go to the github [link](https://github.com/rachaelloh/django-coffee)
+2.	Click on the Clone/download button and copy the URL 
+3.	Set up and install your own Stripe and uploadcare accounts, and also install crispy forms
+5.	To run the application locally, type `python3 manage.py runserver 8080` in bash
+
 ### Heroku Deployment
 
 The website has been deployed to Heroku with reference to our lecturer Mr Paul Chor Kun Xin's notes/document. <br>
