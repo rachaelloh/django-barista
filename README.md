@@ -150,7 +150,14 @@ This repository can also be deployed locally by cloning the repository. This can
 
 3) [Stack Overflow](https://stackoverflow.com/)
 
-4) [w3schools](www.w3schools.com)
+
+
+### Special Thanks to:
+
+**Our Lecturer, Mr Paul Chor Kun Xin**
+
+- For guiding us through hands-on learning and consultations to solve project issues.
+
 
 **This is for educational use only.**
 
