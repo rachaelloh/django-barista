@@ -2,7 +2,21 @@
 
 ### Introduction
 The project consists of an ecommerce site for an online coffee shop called Rach’s Coffee Roasters. The inspiration for this website came from my personal love for coffee which also brings my friends and myself closer together.
-Visitors will be able to view the shop’s short introduction, contact the shop, view and search for different categories of coffee (ground coffee, instant coffee, coffee beans). They have to create a user account in order to add items to cart and make purchases. The site is designed in a way where it is intuitive for users to use and the deployed link can be found [here](https://lzq-django-coffee.herokuapp.com/).
+Normal users will be able to view the shop’s short introduction, contact the shop, view and search for different categories of coffee (ground coffee, instant coffee, coffee beans). They have to create a user account in order to add items to cart and make purchases. For logged in superusers, they have the CRUD (Create, Read, Update, Delete) rights. The site is designed in a way where it is intuitive for users to use and the deployed link can be found [here](https://lzq-django-coffee.herokuapp.com/).
+
+Please register as a new user or use the following accounts to navigate the website:
+
+To log in as a user without CRUD rights, please use the following:
+````
+Username: marygoh
+Password: goh12345
+````
+
+To log in as a user (superuser) with CRUD rights, please use the following:
+````
+Username: admin
+Password: rachcoffeeroasters
+````
 
 ### UX
 | User Stories        | Description   |  
