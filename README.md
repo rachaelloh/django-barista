@@ -50,7 +50,6 @@ The website will be designed based on the identified goals and hence allow users
 -delete product (only when signed in as superuser)
 
 
-
 (i) Wireframes
 
 [Wireframes DataCentric](https://drive.google.com/open?id=1UnhRookhnV4_G75Wt2_pGjqgzN7CFKan)
@@ -97,9 +96,13 @@ The website will be designed based on the identified goals and hence allow users
 
 (i) Mobile Responsiveness
 
-The website has been tested on **Macbook Air/iPad Mini/iPad/iPhone XS/iPhone 6/ Sony Xperia** which covers various screen-size. The browsers used for testings are Google Chrome & Apple Safari.
+The website has been tested on **Macbook Air/iPad Mini/iPhone XS/iPhone 6/ Sony Xperia** which covers various screen-size. The browsers used for testings are Google Chrome & Apple Safari.
 
 During the testing process, I found out that:
+
+-Cart number does not increase if same item is added. But quantity will be updated in shopping_cart page.
+
+
 
 -On devices such as iPhone X or smaller screen sizes, the brand logo 'Recipe Sharing' overspills to the next line. Hence I added media query such that from screen sizes of iPhone X and below, the font size will decrease.
 
@@ -112,17 +115,17 @@ During the testing process, I found out that:
 
 | Test Case(s)      | Test Description   | Outcome | 
 | :------------- |:-------------| :-------------| 
-| 1    | Users will see all recipes at the landing page. | Pass|
-| 2    | If on mobile, users will see a navbar on top with a hamburger on the left and the brand logo 'Recipe Sharing' in the middle. | Pass|
-| 3    | When users click on the hamburger, they will see 3 links 'Search by Cuisine', 'All Recipes', and 'Add Recipe', on top of one another| Pass|
-| 4    | If on web browser on laptop/desktop, users will see a navbar on top with the brand logo on the left and the other 3 links 'Search by Cuisine', 'All Recipes', and 'Add Recipe' on the right side. | Pass|
-| 5    | At the landing page, when users click on the edit button, they will be able to edit and update the recipe that they selected. | Pass|
-| 6    | At the landing page, when users click on the delete button, they will be able delete the selected recipe. | Pass|
-| 7    | At the landing page, when users click on the view button, they will be able to see the details of the recipe that they have selected where the ingredients appear as an unordered list and the cooking steps appear as an ordered list. | Pass|
-| 8    | When users click on the 'Search by Cuisine' button on the navbar, they will be able to see a search bar and the list of recipes below. | Pass|
-| 9    | When users search for the cuisine that they want, relevant results will appear below. | Pass|
-| 10   | When users click on the 'All Recipes' button and the brand logo 'Recipe Sharing', it will direct them to the main/landing page. | Pass|
-| 11   | When users click on the 'Add Recipe' button, they will see a form where they can choose a cuisine category by clicking on the dropdown button, add their recipe name, the ingredients and the cooking steps. After adding, the recipe will be shown in the All Recipes page. | Pass|
+| 1    | At the landing page, users will be able to see the navbrand, the 'Products' link, the 'Register' link, and the 'Log In' link on the navigation bar. When they scroll, they will see a banner image, a short introduction, another image,followed by the 3 coffee categories. | Pass|
+| 2    | When users click on 'Shop Now' under the coffee categories, they will be redirected to the show_products page. | Pass|
+| 3    | When users click on the 'Products' link on the navigation bar, they will be redirected to the show products page. | Pass|
+| 4    | When users are at the show_products page, they will see the banner image, 'Our Products' title, Search by name bar, min cost bar, max cost bar, followed by the products below. | Pass|
+| 5    | For each product, users will see the image, the product name, the product category, the product description, product price in SGD, and the 'Add to Cart' button. | Pass|
+| 6    | When users click on 'Add to Cart', they will be redirected to the login page. | Pass|
+| 7    | At the login page, users will see the banner image, title, link to register if they do not have an account yet, form to type in username and password, 'Submit' button, and 'Forgot Password' button. | Pass|
+| 8    | When users' username and password matches,they will be redirected to the show_products page and a flash message will show 'Successfully logged in as (username)' | Pass|
+| 9    | When users' username and password don't match, and error message 'Invalid username or password' will be shown. | Pass|
+| 10   | When users click on submit when both the username and password fields are empty, 'This field is required.' will be shown. | Pass|
+| 11   | When users click on 'Forgot Password', they will be redirected to a password reset page where they will be asked to enter their email address for password to be sent. Once users click on reet password, they will be redirected to a page which tells them that instructions to reset password has been sent. | Pass|
 
 
 ## Technologies Used
@@ -195,7 +198,7 @@ MIDDLEWARE = [
 ````
 git init 
 git add . 
-git commit -m "Initial commit" 
+git commit -m "Your commit message" 
 ````
 
 8. Login to Heroku from your terminal by using this command `heroku login -i`
@@ -298,7 +301,22 @@ git push heroku master
 
 3) [Stack Overflow](https://stackoverflow.com/)
 
+ground coffee - coffee-ground-x_e2aef62d-42c5-4e5f-adc5-b63a3b80d973_grande.jpeg
+https://www.discountcoffee.co.uk/products/lavazza-ground-coffee-qualita-rossa-250g
 
+instant coffee - https://www.mycuppa.com.au/brazil-freeze-dried-instant-coffee-500g
+
+coffee beans - http://www.symmetry.com.sg/for-sale-1/coffeebeans 
+
+ground coffee powder - https://www.indiamart.com/proddetail/malnad-coffee-powder-16088014397.html 
+
+instant coffee powder - https://www.colourbox.com/image/photo-shot-of-instant-coffee-powder-and-coffee-beans-image-2700463 
+
+robusta beans - https://club.atlascoffeeclub.com/4-main-types-of-coffee-beans/
+
+https://www.illy.com/en-gb/coffee
+
+Social Media Links -Bootstrap Social Icons https://embed.plnkr.co/LpJLnT/
 
 ### Special Thanks to:
 
