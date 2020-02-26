@@ -123,10 +123,14 @@ During the testing process, I found out that:
 | 6    | When users click on 'Add to Cart', they will be redirected to the login page. | Pass|
 | 7    | At the login page, users will see the banner image, title, link to register if they do not have an account yet, form to type in username and password, 'Submit' button, and 'Forgot Password' button. | Pass|
 | 8    | When users' username and password matches,they will be redirected to the show_products page and a flash message will show 'Successfully logged in as (username)' | Pass|
-| 9    | When users' username and password don't match, and error message 'Invalid username or password' will be shown. | Pass|
-| 10   | When users click on submit when both the username and password fields are empty, 'This field is required.' will be shown. | Pass|
-| 11   | When users click on 'Forgot Password', they will be redirected to a password reset page where they will be asked to enter their email address for password to be sent. Once users click on reet password, they will be redirected to a page which tells them that instructions to reset password has been sent. | Pass|
-
+| 9    | When users' are logged in, they will see the 'Products' link, 'My Account' link, 'Logout' link, and 'Cart' link on the navigation bar. | Pass|
+| 10    | When users' username and password don't match, and error message 'Invalid username or password' will be shown. | Pass|
+| 11   | When users click on submit when both the username and password fields are empty, 'This field is required.' will be shown. | Pass|
+| 12   | When users click on 'Forgot Password', they will be redirected to a password reset page where they will be asked to enter their email address for password to be sent. Once users click on reet password, they will be redirected to a page which tells them that instructions to reset password has been sent. | Pass|
+| 13   | When users click on link to register, they will be redirected to the register page. | Pass|
+| 14   | At the register page, users will see the banner image, title, link to sign in if they already have an account, form to type in emai address, username, password, password confirmation, and submit button. | Pass|
+| 15   | When users have successfully registered, they will be redirected to landing page/index page and a flash message will show 'You have successfully registered' | Pass|
+| 16   | Users will get error messages if email address is not in right format, both passwords don't match, fields are empty. | Pass|
 
 ## Technologies Used
 
