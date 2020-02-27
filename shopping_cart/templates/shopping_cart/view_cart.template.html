@@ -37,9 +37,9 @@
                  {{product.quantity}} 
                 <a href="{% url 'add_to_cart' product_id=id %}"><i class="fa fa-plus ml-2"></i></a>
             </td>
-            <td>${{product.price}}</td>
+            <td>SGD${{product.price}}</td>
            
-            <td>${{product.total_price}}</td>
+            <td>SGD${{product.total_price}}</td>
             <td><a href="{% url 'remove_from_cart' product_id=id %}"><i class="fa fa-trash dustbin"></i></a></td>
         </tr>
         {%endfor%}
