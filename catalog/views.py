@@ -53,7 +53,7 @@ def update_product(request, product_id):
         form = ProductForm(request.POST, instance=product_updated)
         if form.is_valid():
             form.save()
-            
+            messages.success(request,"Product [" + form.data.get('name') + "] has been updated!")
             return redirect(reverse(show_products))
             
     else:

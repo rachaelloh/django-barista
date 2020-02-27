@@ -137,7 +137,6 @@ STATICFILES_DIRS = [
     ]
     
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
     
 UPLOADCARE_PUBLIC_KEY = os.environ['UPLOADCARE_PUBLIC_KEY']
 UPLOADCARE_SECRET_KEY = os.environ['UPLOADCARE_SECRET_KEY']

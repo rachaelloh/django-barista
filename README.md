@@ -141,7 +141,16 @@ During the testing process, I found out that:
 | 23   | When users click on 'Proceed to checkout', they will be redirected to the Stripe Online Payment checkout page. | Pass|
 | 24   | At the Stripe page, users will see the product(s) they ordered, the quantity, and the price. They will also be asked to pay with card and will have to input their email, card information, before their ordered gets processed. | Pass|
 | 25   | When payment is successful, users will be redirected to a thank you page where they are told that they will contact via email and a button which redirects them to the show_products page. | Pass|
+| 26   | When users complete the transaction, the number beside the 'Cart' link resets to 0 | Pass|
+| 27   | When users login as superusers (admin), they will see an additional link on the navigation bar 'Add a Product' | Pass|
+| 28   | When they click on 'Add a Product', they will see the banner image, 'Add a Product' title, form to type in name, description, price, category, upload image of the product they want to add, and a create product button.  | Pass|
+| 29   | When they click on 'Create Product', they will be redirected to the show_products page where they will see the newly added product and see a flash message 'Product[product name] has been added!'  | Pass|
+| 30   | At the show_products page, superusers will see 2 additional buttons other than the 'Add to cart' button. They will see 'Update Product' button and 'Delete Product' button.  | Pass|
+| 31   | When they click on 'Update Product', they will be redirected to update_product page.  | Pass|
+| 32   | At the update_product page, superusers will see the banner image, 'Update Product' title, and the form similar to 'Create Product' page except that they will see the previously input name, description, price, category, and image, and an update button.  | Pass|
 
+
+TEST CASE FOR SUPERUSERS
 
 ## Technologies Used
 
