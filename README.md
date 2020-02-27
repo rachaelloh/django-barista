@@ -148,6 +148,11 @@ During the testing process, I found out that:
 | 30   | At the show_products page, superusers will see 2 additional buttons other than the 'Add to cart' button. They will see 'Update Product' button and 'Delete Product' button.  | Pass|
 | 31   | When they click on 'Update Product', they will be redirected to update_product page.  | Pass|
 | 32   | At the update_product page, superusers will see the banner image, 'Update Product' title, and the form similar to 'Create Product' page except that they will see the previously input name, description, price, category, and image, and an update button.  | Pass|
+| 33   | When superusers edit the name, description, price, category, image, they will have to click on the update button. They will be redirected to the show_products page and see the flash message 'Product[product name] has been updated.'  | Pass|
+| 34   | When superusers click on 'Delete Product', they will be redirected to the confirm_delete_product page.  | Pass|
+| 35   | At the confirm_delete_product page, superusers will see the banner image, title 'Are you sure you want to delete the product?', product name that they have selected to delete, and 2 buttons 'Yes, delete' and 'No'  | Pass|
+| 36   | If superusers click on 'Yes, delete', they will be redirected back to show_products page and will not see the product that they have deleted.  | Pass|
+| 37   | If superusers click on 'No', they will be redirected back to show_products page and will still see all the products.  | Pass|
 
 
 TEST CASE FOR SUPERUSERS
