@@ -3,10 +3,12 @@ from django.shortcuts import render, reverse, HttpResponse, get_object_or_404
 #import settings so that we can access the public stripe key
 from django.conf import settings
 import stripe
+from django.contrib.auth.decorators import login_required
 
 from catalog.models import Product
 
 # Create your views here.
+@login_required
 def checkout(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
     

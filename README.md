@@ -52,7 +52,7 @@ The website will be designed based on the identified goals and hence allow users
 
 (i) Wireframes
 
-[Wireframes DataCentric](https://drive.google.com/open?id=1UnhRookhnV4_G75Wt2_pGjqgzN7CFKan)
+[Wireframes Full Stack](https://drive.google.com/open?id=1UnhRookhnV4_G75Wt2_pGjqgzN7CFKan)
 
 ### Project Skeleton - Features
 
@@ -103,14 +103,6 @@ During the testing process, I found out that:
 -Cart number does not increase if same item is added. But quantity will be updated in shopping_cart page.
 
 
-
--On devices such as iPhone X or smaller screen sizes, the brand logo 'Recipe Sharing' overspills to the next line. Hence I added media query such that from screen sizes of iPhone X and below, the font size will decrease.
-
--Search results will not be shown if I did not type in the exact cuisine name. Hence, the regular expression function has been used to make search function dynamic.
-
--Ordered list was unable to display properly in the view recipe page. Hence, I used split to solve the problem and the steps is now able to be displayed in an ordered list.
-
-
 (ii) Test Cases
 
 | Test Case(s)      | Test Description   | Outcome | 
@@ -154,8 +146,6 @@ During the testing process, I found out that:
 | 36   | If superusers click on 'Yes, delete', they will be redirected back to show_products page and will not see the product that they have deleted.  | Pass|
 | 37   | If superusers click on 'No', they will be redirected back to show_products page and will still see all the products.  | Pass|
 
-
-TEST CASE FOR SUPERUSERS
 
 ## Technologies Used
 
@@ -324,28 +314,29 @@ git push heroku master
 
 ## Credits
 
-1) Website design/outlook was inspired by http://recipebook-project.herokuapp.com/
+1) Images are taken from [Pexels](https://www.pexels.com/), and a variety of website links as shown below:
 
-2) Background image was taken from [Pexels](https://www.pexels.com/)
+-https://www.discountcoffee.co.uk/products/lavazza-ground-coffee-qualita-rossa-250g
+
+-https://www.mycuppa.com.au/brazil-freeze-dried-instant-coffee-500g
+
+-http://www.symmetry.com.sg/for-sale-1/coffeebeans 
+
+-https://www.indiamart.com/proddetail/malnad-coffee-powder-16088014397.html 
+
+-https://www.colourbox.com/image/photo-shot-of-instant-coffee-powder-and-coffee-beans-image-2700463 
+
+-https://club.atlascoffeeclub.com/4-main-types-of-coffee-beans/
+
+
+2) Product names and descriptions taken from [illy](https://www.illy.com/en-gb/coffee)
+
 
 3) [Stack Overflow](https://stackoverflow.com/)
 
-ground coffee - coffee-ground-x_e2aef62d-42c5-4e5f-adc5-b63a3b80d973_grande.jpeg
-https://www.discountcoffee.co.uk/products/lavazza-ground-coffee-qualita-rossa-250g
 
-instant coffee - https://www.mycuppa.com.au/brazil-freeze-dried-instant-coffee-500g
+4) Social Media Links ideas - Bootstrap Social Icons https://embed.plnkr.co/LpJLnT/
 
-coffee beans - http://www.symmetry.com.sg/for-sale-1/coffeebeans 
-
-ground coffee powder - https://www.indiamart.com/proddetail/malnad-coffee-powder-16088014397.html 
-
-instant coffee powder - https://www.colourbox.com/image/photo-shot-of-instant-coffee-powder-and-coffee-beans-image-2700463 
-
-robusta beans - https://club.atlascoffeeclub.com/4-main-types-of-coffee-beans/
-
-https://www.illy.com/en-gb/coffee
-
-Social Media Links -Bootstrap Social Icons https://embed.plnkr.co/LpJLnT/
 
 ### Special Thanks to:
 

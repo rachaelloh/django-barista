@@ -44,7 +44,7 @@ def create_product(request):
         'form': product_form
     })
     
-# Update/Edit Product
+# Update/Edit Product only for superusers/admin
 @user_passes_test(lambda u: u.is_superuser)
 def update_product(request, product_id):
     product_updated = get_object_or_404(Product, pk=product_id)
@@ -64,7 +64,7 @@ def update_product(request, product_id):
     })
             
 
-# Confirm Product to be deleted
+# Confirm Product to be deleted only for superusers/admin
 @user_passes_test(lambda u: u.is_superuser)
 def confirm_delete_product(request, product_id):
     delete_product = get_object_or_404(Product, pk=product_id)
@@ -72,7 +72,7 @@ def confirm_delete_product(request, product_id):
         'product':delete_product
     })
     
-# Actually deleting Product
+# Actually deleting Product only for superusers/admin
 @user_passes_test(lambda u: u.is_superuser)
 def actually_delete_product(request, product_id):
     product_being_deleted = get_object_or_404(Product, pk=product_id)
