@@ -52,7 +52,7 @@ The website will be designed based on the identified goals and hence allow users
 
 (i) Wireframes
 
-[Wireframes Full Stack](https://drive.google.com/open?id=1UnhRookhnV4_G75Wt2_pGjqgzN7CFKan)
+[Wireframes Full Stack](https://drive.google.com/open?id=14cLgE-v-eBJ6j0ZJbfTegbBy1GywbqvU)
 
 ### Project Skeleton - Features
 
