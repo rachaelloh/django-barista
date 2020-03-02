@@ -18,6 +18,14 @@ Username: admin
 Password: rachcoffeeroasters
 ````
 
+Checkout credit card testing details:
+````
+Credit card number: 4242 4242 4242 4242
+Security code (CVV): 123
+Month: 01
+Year: 2024
+````
+
 ### UX
 | User Stories        | Description   |  
 | :------------- |:-------------| 
