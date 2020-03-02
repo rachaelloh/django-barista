@@ -17,11 +17,17 @@ img {
 
 .card {
     display: inline-block;
+    height: 100%;
 }
 
 .card img {
-    height: 200px;
+    height: 280px;
     
+}
+
+.img-card-top {
+    height: 100%;
+    width: 100%;
 }
 
 h2 {

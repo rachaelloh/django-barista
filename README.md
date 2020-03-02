@@ -322,14 +322,8 @@ git push heroku master
 
 -http://www.symmetry.com.sg/for-sale-1/coffeebeans 
 
--https://www.indiamart.com/proddetail/malnad-coffee-powder-16088014397.html 
 
--https://www.colourbox.com/image/photo-shot-of-instant-coffee-powder-and-coffee-beans-image-2700463 
-
--https://club.atlascoffeeclub.com/4-main-types-of-coffee-beans/
-
-
-2) Product names and descriptions taken from [illy](https://www.illy.com/en-gb/coffee)
+2) Product images, names and descriptions taken from [illy](https://www.illy.com/en-gb/coffee)
 
 
 3) [Stack Overflow](https://stackoverflow.com/)
